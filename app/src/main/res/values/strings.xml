@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="instructions_instant">Press the \'Continue\' button below to start the game. Everything in the app is part of the research. We kindly ask you to share you opinions with us through the questionnaire. You will be presented a code to access the next part of the questionnaire after you have played the game once. Thank you very much for your participation.</string>
+
+    <string name="app_name" translatable="false">UXperience - 2048</string>
+    <string name="action_settings">Settings</string>
+    <string name="press_back_again_to_exit">Press back again to exit</string>
+    <string name="toggle_fullscreen">Long click to toggle fullscreen</string>
+    <string name="popup_title">Attention!</string>
+    <string name="popup_text">"Fill in this code to proceed with the questionnaire: "</string>
+    <string name="app_description">This application is part of a research of students from the University of Twente. The goal of this research is to determine how users experience Android Apps.</string>
+    <string name="btn_launch">Continue</string>
+    <string name="contact">For more information you can contact the reseachers at {d.t.r.ikink, j.a.l.starink, v.a.dunning}@student.utwente.nl.</string>
+    <string name="password_title">Thank you!</string>
+    <string name="password_text">To continue the questionnaire, use the following password: research</string>
+
+</resources>

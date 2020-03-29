@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_settings">Instellingen</string>
+    <string name="press_back_again_to_exit">Druk opnieuw op terug om af te sluiten</string>
+	<string name="toggle_fullscreen">Druk lang in om volledig scherm om te schakelen</string>
+    <string name="popup_title">Let op!</string>
+    <string name="popup_text">"Vul deze code in in de enquête om verder te gaan: "</string>
+    <string name="app_description">Deze applicatie is onderdeel van een onderzoek van studenten van de Universiteit Twente. Het doel van dit onderzoek is vaststellen hoe gebruikers Android Apps ervaren.</string>
+    <string name="btn_launch">Doorgaan</string>
+    <string name="contact">Voor meer informatie kan je contact opnemen met de onderzoekers via {d.t.r.ikink, j.a.l.starink, v.a.dunning}@student.utwente.nl.</string>
+    <string name="instructions_instant">Druk hieronder op \'Doorgaan\' om het spel te starten. Alles in de app hoort bij het onderzoek. Graag willen we je vragen of je na het gebruik van deze app je bevindingen met ons kunt delen via de enquête. Je krijgt van ons een code om het volgende deel van de enquête te openen nadat je het spel een keer gespeeld hebt. Alvast hartelijk bedankt voor je deelname!</string>
+    <string name="password_title">Dankjewel!</string>
+    <string name="password_text">Gebruik de volgende code om verder te gaan met de enquête: research</string>
+
+</resources>
