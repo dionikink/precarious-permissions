@@ -3,6 +3,8 @@ package com.dion.a2048.game;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.dion.a2048.MainActivity;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,10 +41,12 @@ public class RequestAccessCodeTask extends AsyncTask<String, Void, ServerCommuni
         String token = null;
 
         try {
-            jsonRequest.put("app_variant", GameActivity.appVariant);
+            jsonRequest.put("app_variant", MainActivity.appVariant);
 
             response = this.post(url, jsonRequest.toString());
             jsonResponse = new JSONObject(response);
+
+            Log.i(TAG, "doInBackground: " + jsonResponse);
 
             id = (int) jsonResponse.get("id");
             code = (String) jsonResponse.get("participant_code");

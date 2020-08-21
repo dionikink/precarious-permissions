@@ -2,6 +2,7 @@ package com.dion.a2048.game;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
@@ -60,15 +61,21 @@ public abstract class PermissionHandler {
 
     @JavascriptInterface
     public void show_password() {
+        Intent intent = new Intent(mContext, PasswordActivity.class);
+        mContext.startActivity(intent);
+    }
+
+    @JavascriptInterface
+    public void show_token() {
         new AlertDialog.Builder(mContext)
-                .setTitle(mContext.getString(R.string.password_title))
-                .setMessage(mContext.getString(R.string.password_text))
+                .setTitle(mContext.getString(R.string.popup_title))
+                .setMessage(mContext.getString(R.string.popup_text) + GameActivity.serverID.accessCode)
 
                 // A null listener allows the button to dismiss the dialog and take no further action.
                 .setNegativeButton(android.R.string.ok, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .show()
-                .setCancelable(false);
+                .setCancelable(false)
+                .show();
     }
 
     public abstract void make_move();
@@ -183,7 +190,7 @@ public abstract class PermissionHandler {
         @Override
         public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
             GameActivity mActivity = (GameActivity) this.mContext;
-            SubmitDataTask submitDataTask = new SubmitDataTask(mActivity.getHttpClient());
+            SubmitDataTask submitDataTask = new SubmitDataTask(GameActivity.getHttpClient());
             boolean result;
 
             float responseTime = System.currentTimeMillis() - mActivity.requestTimer;

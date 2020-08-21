@@ -1,5 +1,8 @@
 package com.dion.a2048.game;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import org.jetbrains.annotations.NotNull;
 
 public class ServerCommunicationHandler {
@@ -34,5 +37,6 @@ public class ServerCommunicationHandler {
             this.accessCode = accessCode;
             this.accessToken = accessToken;
         }
+
     }
 }

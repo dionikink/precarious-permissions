@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="instructions_instant">Press the \'Continue\' button below to start the game. Everything in the app is part of the research. We kindly ask you to share you opinions with us through the questionnaire. You will be presented a code to access the next part of the questionnaire after you have played the game once. Thank you very much for your participation.</string>
+    <string name="instructions_instant">Press the \'Continue\' button below to start the game. Everything in the app is part of the research. We kindly ask you to share you opinions with us through the questionnaire. You will first be shown a unique participation code, please fill in this code in the questionnaire. After you have played a game of 2048, you will be shown the password to continue. Thank you very much for your participation.</string>
 
     <string name="app_name" translatable="false">UXperience - 2048</string>
     <string name="action_settings">Settings</string>
@@ -13,6 +13,9 @@
     <string name="btn_launch">Continue</string>
     <string name="contact">For more information you can contact the reseachers at {d.t.r.ikink, j.a.l.starink, v.a.dunning}@student.utwente.nl.</string>
     <string name="password_title">Thank you!</string>
-    <string name="password_text">To continue the questionnaire, use the following password: research</string>
+    <string name="password_text">To continue the questionnaire, use the following password: "research"</string>
+    <string name="instructions_code">If you forget your unique participant code, please press the \"ID\" button in the game.</string>
+
+    <string name="title_activity_password">Thank you!</string>
 
 </resources>

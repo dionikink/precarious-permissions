@@ -3,6 +3,9 @@ package com.dion.a2048.game;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -18,6 +21,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.dion.a2048.MainActivity;
 import com.dion.a2048.R;
 
 import java.util.Arrays;
@@ -51,17 +55,12 @@ public class GameActivity extends Activity {
     private static final long mTouchThreshold = 2000;
     private Toast pressBackToast;
 
-    static int appVariant; // App variant (1 = control, 2 = gradual, 3 = all at once)
-
-    private ServerCommunicationHandler.ServerIdentity serverID;
+    public static ServerCommunicationHandler.ServerIdentity serverID;
 
     @SuppressLint({"SetJavaScriptEnabled", "ShowToast", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        GameActivity.appVariant = (int) (Math.random() * 3 + 1);
-        GameActivity.appVariant = 3;
 
         // Don't show an action bar or title
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -121,24 +120,8 @@ public class GameActivity extends Activity {
             return false;
         });
 
-        // Request access code from server
-        ServerCommunicationHandler.ServerIdentity serverID = null;
-        RequestAccessCodeTask requestAccessCodeTask = new RequestAccessCodeTask(getHttpClient());
-
-        try {
-            serverID = requestAccessCodeTask.execute().get();
-        } catch (ExecutionException e) {
-            Log.e(TAG, "onCreate: Error while requesting access code");
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            Log.e(TAG, "onCreate: Interrupted while requesting access code");
-            e.printStackTrace();
-        }
-
-        this.serverID = serverID;
-
         // Set PermissionHandler and register with Javascript code
-        switch (GameActivity.appVariant) {
+        switch (MainActivity.appVariant) {
             case 1:
                 this.permissionHandler = new PermissionHandler.Control(this);
                 break;
@@ -150,19 +133,9 @@ public class GameActivity extends Activity {
         }
 
         mWebView.addJavascriptInterface(this.permissionHandler, "PermissionHandler");
-
-        new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.popup_title))
-                .setMessage(getString(R.string.popup_text) + serverID.accessCode)
-
-                // A null listener allows the button to dismiss the dialog and take no further action.
-                .setNegativeButton(android.R.string.ok, null)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .show()
-                .setCancelable(false);
     }
 
-    public OkHttpClient getHttpClient() {
+    public static OkHttpClient getHttpClient() {
         return new OkHttpClient.Builder()
                 .connectionSpecs(Arrays.asList(
                         ConnectionSpec.MODERN_TLS,
@@ -233,13 +206,6 @@ public class GameActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        long currentTime = System.currentTimeMillis();
-        if (Math.abs(currentTime - mLastBackPress) > mBackPressThreshold) {
-            pressBackToast.show();
-            mLastBackPress = currentTime;
-        } else {
-            pressBackToast.cancel();
-            super.onBackPressed();
-        }
+        // Do nothing here, the user should not be able to go back from the game.
     }
 }

@@ -25,10 +25,19 @@
         android:autoLink="web"/>
 
     <TextView
-        android:id="@+id/contact"
+        android:id="@+id/instructions_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/instructions"
+        android:paddingBottom="15dp"
+        android:text="@string/instructions_code" />
+
+
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructions_code"
         android:paddingBottom="15dp"
         android:text="@string/contact" />
 

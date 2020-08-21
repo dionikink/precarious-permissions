@@ -5,12 +5,14 @@
     <string name="press_back_again_to_exit">Druk opnieuw op terug om af te sluiten</string>
 	<string name="toggle_fullscreen">Druk lang in om volledig scherm om te schakelen</string>
     <string name="popup_title">Let op!</string>
-    <string name="popup_text">"Vul deze code in in de enquête om verder te gaan: "</string>
+    <string name="popup_text">"Vul dit wachtwoord in in de enquête om verder te gaan: "</string>
     <string name="app_description">Deze applicatie is onderdeel van een onderzoek van studenten van de Universiteit Twente. Het doel van dit onderzoek is vaststellen hoe gebruikers Android Apps ervaren.</string>
     <string name="btn_launch">Doorgaan</string>
     <string name="contact">Voor meer informatie kan je contact opnemen met de onderzoekers via {d.t.r.ikink, j.a.l.starink, v.a.dunning}@student.utwente.nl.</string>
-    <string name="instructions_instant">Druk hieronder op \'Doorgaan\' om het spel te starten. Alles in de app hoort bij het onderzoek. Graag willen we je vragen of je na het gebruik van deze app je bevindingen met ons kunt delen via de enquête. Je krijgt van ons een code om het volgende deel van de enquête te openen nadat je het spel een keer gespeeld hebt. Alvast hartelijk bedankt voor je deelname!</string>
+    <string name="instructions_instant">Druk hieronder op \'Doorgaan\' om het spel te starten. Alles in de app hoort bij het onderzoek. Graag willen we je vragen of je na het gebruik van deze app je bevindingen met ons kunt delen via de enquête. Je krijgt eerst een unieke deelnemerscode te zien, vul deze in in de enquête. Nadat je een potje 2048 gespeeld hebt, krijg je het wachtwoord te zien om verder te gaan in de enquête. Alvast hartelijk bedankt voor je deelname!</string>
     <string name="password_title">Dankjewel!</string>
     <string name="password_text">Gebruik de volgende code om verder te gaan met de enquête: research</string>
+    <string name="instructions_code">Als je je unieke deelnemerscode vergeten bent, druk dan op de \"ID\" knop in het spel.</string>
+    <string name="title_activity_password">Dankjewel!</string>
 
 </resources>
